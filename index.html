@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editor de Texto</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!-- Inicio --> 
+    <form>
+    <h2>Feedback Reunião</h2>
+    <label for ="username">Usuário: </label>
+    <input type ="text" id ="username" name = "Nome de Usuário" required>
+   </div>
+    <label for ="email">E-Mail: </label>
+    <input type="email" id="email" name="email" required>
+    </div>
+    <label for ="comentario">Comentário: </label>
+    <input type ="text" id ="comentario" name = "Comentário" required>
+    </div>
+    <!-- Botões de Desfazer e Refazer -->
+    <div class="editor-container">
+        <div class="toolbar">
+            <button id="undo" onclick="undoAction()">Desfazer</button>
+            <button id="redo" onclick="redoAction()">Refazer</button>
+        </div>
+        <div contenteditable="true" class="editor" id="editor"></div>
+    </div>
+<!-- Enviar FORM -->
+    <input type="submit" value="Enviar">
+</form>
+    <!-- Linkar o JS -->
+    <script src="js/index.js"></script>
+</body>
+</html>
