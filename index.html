@@ -3,33 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>Editor de Texto</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- Inicio --> 
-    <form>
-    <h2>Feedback Reunião</h2>
-    <label for ="username">Usuário: </label>
-    <input type ="text" id ="username" name = "Nome de Usuário" required>
-   </div>
-    <label for ="email">E-Mail: </label>
-    <input type="email" id="email" name="email" required>
+    <a href="#home" onclick="showSection('home')">Início</a>
+    <button id="logoutBtn" class="btn btn-logout" style="display:none; margin-left: 10px; padding: 4px 12px; font-size: 0.85em; border-radius: 16px; background: #333; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); vertical-align: middle;" onclick="logoutUser()">Sair</button>
+    <div class="navbar">
+    <a href="#home" onclick="showSection('home')">Início</a>
+    <a href="#Cadastro" id="cadastroLink" onclick="showSection('cadastro')">Cadastro</a>
+    <a href="#Login" id="loginLink" onclick="showSection('login')">Login</a>
+    <a href="#feedback" onclick="showSection('feedback')">Feedback Reunião</a>
+    <a href="#excluir" onclick="showSection('excluir')">Excluir conta</a>
     </div>
-    <label for ="comentario">Comentário: </label>
-    <input type ="text" id ="comentario" name = "Comentário" required>
+    <div id="home" class="content section">
+        <h2>Bem-vindo ao nosso site!</h2>
+        <p>De o seu Feedback sobre as Reuniões.</p>
     </div>
-    <!-- Botões de Desfazer e Refazer -->
-    <div class="editor-container">
-        <div class="toolbar">
-            <button id="undo" onclick="undoAction()">Desfazer</button>
-            <button id="redo" onclick="redoAction()">Refazer</button>
+    <div id="cadastro" class="container section" style="display:none;">
+        <h2>Cadastro</h2>
+        <form>
+            <input type="text" placeholder="Nome Completo" required>
+            <input type="email" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required>
+            <button class="btn" type="submit">Cadastrar</button>
+        </form>
+    </div>
+    <div id="login" class="container section" style="display:none;">
+        <h2>Login</h2>
+        <form>
+            <input type="email" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required>
+            <button class="btn" type="submit">Entrar</button>
+        </form>
+    </div>
+    <div id="feedback" class="container section" style="display:none;">
+        <h2>Feedback Reunião</h2>
+        <form>
+            <label for="Comentario">Comentário:</label>
+            <div contenteditable="true" class="editor" id="editor"></div>
+            <div class="toolbar" style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px;">
+                <button id="undo" type="button" onclick="undoAction()" class="btn-undo">Desfazer</button>
+                <button id="redo" type="button" onclick="redoAction()" class="btn-redo">Refazer</button>
+            </div>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    <div id="excluir" class="container section" style="display:none;">
+        <h2>Configurações da Conta</h2>
+        <button class="btn btn-danger" onclick="abrirModal()">Excluir Conta</button>
+        <div id="modalConfirmacao" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Tem certeza de que deseja excluir sua conta?</h3>
+                <p>Essa ação é irreversível.</p>
+                <div class="buttons">
+                    <button class="btn btn-danger" onclick="confirmarExclusao()">Sim, Excluir</button>
+                    <button class="btn btn-cancel" onclick="fecharModal()">Cancelar</button>
+                </div>
+            </div>
         </div>
-        <div contenteditable="true" class="editor" id="editor"></div>
     </div>
-<!-- Enviar FORM -->
-    <input type="submit" value="Enviar">
-</form>
-    <!-- Linkar o JS -->
     <script src="js/index.js"></script>
+    <script>
+    function showSection(id) {
+        // Oculta todas as seções
+        document.querySelectorAll('.section').forEach(function(sec) {
+            sec.style.display = 'none';
+        });
+        // Mostra a seção selecionada
+        document.getElementById(id).style.display = 'block';
+    }
+    // Mostra a home por padrão
+    showSection('home');
+    </script>
 </body>
 </html>

@@ -1,44 +1,121 @@
+/* Botões Desfazer e Refazer personalizados */
+.btn-undo {
+    background-color: #f7b731;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-undo:hover {
+    background-color: #e1a325;
+}
+.btn-redo {
+    background-color: #3867d6;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-redo:hover {
+    background-color: #274b8f;
+}
  body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
         margin: 0;
         padding:0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
     }
+    .container {
+        background: white;
+        padding: 32px 40px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.12);
+        width: 420px;
+        max-width: 95vw;
+        margin: 32px auto;
+        text-align: left;
+    }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 14px;
+            margin: 14px 0;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            font-size: 1.1em;
+            box-sizing: border-box;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+        .navbar {
+            background: #333;
+            padding: 15px;
+            text-align: center;
+            
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .navbar a:hover {
+            background: #575757;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
     input[type=text]{
         width: 100%;
-        padding: 10px;
-        margin: 5px 0;
+        padding: 14px;
+        margin: 14px 0;
         display:inline-block;
-        border: 1px solid #ccc;
-        border-radius: 3px;
+        border: 1px solid #bbb;
+        border-radius: 6px;
+        font-size: 1.1em;
         box-sizing: border-box;
-       
     }
     input[type="submit"] {
-        width: 100;
+        width: 100%;
         background-color: #007bff;
         color: #fff;
-        padding: 10px;
+        padding: 12px;
         border: none;
-        border-radius: 3px;
+        border-radius: 6px;
         cursor: pointer;
-        font-size: 16px;
-
+        font-size: 1.1em;
+        margin-top: 10px;
     }
     input[type="submit"]:hover {
     background-color: #0056b3;
     }
 
     form{
+        display: block;
         background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        width: 300px;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+        width: 100%;
     }
 
 .editor-container {
@@ -55,12 +132,17 @@ button {
     margin-right: 5px;
 }
 
-.editor {
-    border: 1px solid #ccc;
-    min-height: 300px;
-    padding: 10px;
-    background-color: #fff;
-}
+    .editor {
+        border: 1px solid #ccc;
+        min-height: 120px;
+        padding: 14px;
+        background-color: #fff;
+        font-size: 1.1em;
+        border-radius: 6px;
+        margin-bottom: 12px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
 /* CSS do botão de exclusão e confirmação excl. */
  .modal {
