@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Lógica</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="container" role="main">
+        <h1>Sequeência Lógica</h1>
+        <p class="subtitle">Complete as lacunas e complete 
+                            a sequência!</p>
+        <label>Quantidade de números na sequência:</label>
+        <input type="number" id="totalNumeros" value="10"
+                        min="5" max="20" />
+         <label>Quantidade de lacunas na sequência:</label>
+        <input type="number" id="totalLacunas" value="3"
+                        min="1" max="10" />
+        <div>
+            <button onclick="mostrarSequencia()">
+                Gerar Sequência</button>
+            <button onclick="verificarRespostas()">
+               Verificar Respostas</button>    
+        </div>
+
+        <div id="sequencia" aria-live="polite" 
+                                role="region"
+                                style="margin-top: rem;">
+        </div>
+        <div id="resultado" role="alert" aria-live="assertive">
+            </div>
+        </div>
+    </div>
+      <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
