@@ -1,0 +1,140 @@
+  body{
+  font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    background: rgba(0,0,0,0.6);
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 2.6rem;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  }
+
+  p.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    color: #dbe2ff;
+  }
+
+  label {
+    display: block;
+    margin: 1rem 0 0.4rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  input[type=number] {
+    width: 60px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.15rem;
+    text-align: center;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+  }
+
+  input[type=number]:focus {
+    box-shadow: 0 0 10px #ffd700;
+  }
+
+  #sequencia {
+    font-size: 2rem;
+    margin-top: 2rem;
+    letter-spacing: 0.3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  input.numero-lacuna {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+    border-radius: 15px;
+    border: 3px solid #ffd700;
+    background-color: #0b1a47;
+    color: #fff;
+    text-align: center;
+    transition: border-color 0.4s;
+    box-shadow: 0 0 8px #ffd700;
+  }
+
+  input.numero-lacuna:focus {
+    border-color: #00ffcc;
+    box-shadow: 0 0 15px #00ffcc;
+  }
+
+  span.primo-num {
+    background: #4caf50;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #4caf50aa;
+  }
+
+  button {
+    background: linear-gradient(45deg, #ff4081, #ff6e40);
+    border: none;
+    padding: 0.8rem 2rem;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 2rem 1rem 0 1rem;
+    box-shadow: 0 5px 15px #ff6e40cc;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  button:hover {
+    background: linear-gradient(45deg, #ff6e40, #ff4081);
+    transform: scale(1.05);
+  }
+
+  #resultado {
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+    min-height: 2.2rem;
+  }
+
+  .correto {
+    color: #00ffcc;
+    animation: pulseGreen 1.2s ease forwards;
+  }
+
+  .incorreto {
+    color: #ff5252;
+    animation: shake 0.8s ease forwards;
+  }
+
+  @keyframes pulseGreen {
+    0%, 100% { text-shadow: 0 0 8px #00ffcc; }
+    50% { text-shadow: 0 0 20px #00fff7; }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25%, 75% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+  }
